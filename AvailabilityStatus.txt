@@ -1,0 +1,36 @@
+AvailabilityStatus.exe
+v1.0
+
+Written using AutoHotKey version: 1.1.32.00
+Author: Michael Kizer <michael.kizer@perspecta.com>
+Date:   06/30/2020 - Initial release.
+Source code: https://github.com/mkizer/AvailabilityStatus
+
+Function:
+Set status indicators (presence) for Skype, Teams, and Chime with only a couple of clicks.
+Only works on the Windows desktop applications, not the web versions. The applications must be running for the status to be set.
+
+Installation:
+* Simply copy AvailabilityStatus.exe and AvailabilityStatus.ini to a location on your computer.
+* (Optional) Edit the skypestatus.ini file (Notepad or other text editor) and choose which services the application will attempt to change. "true" to enable, "false" to ignore.
+* Right-click AvailabilityStatus.exe and choose "Create shortcut". You can place this shortcut anywhere convenient (like the Desktop).
+
+Usage:
+Simply run AvailabilityStatus.exe, select a status, and press OK. 
+The keyboard can also be used on this dialog. Use the up/down arrow keys to choose the status and enter to set it. Escape to cancel.
+
+Command Line Usage:
+AvailabilityStatus.exe also accepts a single command line parameter, which corresponds to the status selections on the main dialog. 
+The parameter must be one of the following:
+    /available
+    /busy
+    /dnd
+    /away
+    /brb
+    /off
+
+Example command line usage:
+You may append one of these parameters to the command in a shortcut, to create a quick way to set a particular status. Create multiple shortcuts and place on your desktop, for example.
+Pasting the path and application into Windows Run (Win + r) along with a parameter, is a quick way to execute and call up previously executed commands since Windows Run keeps a history.
+Run commands from a script or the Windows command prompt - Example: c:\>utils\AvailabilityStatus.exe /busy
+Note: In order to properly read the application's associated .ini file, commands should be executed in the directory where both the .exe and .ini are located. If the .ini file can't be found it will attmept to set the status for all services by default.
